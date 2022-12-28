@@ -1,0 +1,26 @@
+#彩色金字塔      
+def square(black,x,y,z,n):
+    blocks.fill(black, world(x,y,z), world(x+n-1,y,z+n-1), FillOperation.REPLACE)
+
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)        
+
+wool = [PURPLE_WOOL,BLUE_WOOL,LIGHT_BLUE_WOOL,LIME_WOOL,YELLOW_WOOL,ORANGE_WOOL,RED_WOOL]
+
+for i in range(7):
+    square(wool[i],x+i,y+i,z+i,13-2*i)
+
+
+
+#蠕蟲病毒
+def virus(number):
+    for i in range(8):
+        for j in range(number):
+            mobs.spawn(mobs.monster(SILVERFISH),player.position())
+                
+        number = number*2
+            
+        player.say("這次生成了"+str(number)+"蠹魚")
+virus(3)
+
