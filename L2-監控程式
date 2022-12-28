@@ -1,0 +1,4 @@
+while True:
+    player.say("u r on " + ":" + str(player.position()))
+    loops.pause(100)
+    break
