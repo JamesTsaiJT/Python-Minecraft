@@ -1,0 +1,16 @@
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+#蓋房子進階
+blocks.fill(GLASS, world(x,y,z), world(x+19,y+19,z+29), FillOperation.REPLACE)
+blocks.fill(AIR, world(x+3,y+3,z+3), world(x+19-3,y+19-3,z+29-3), FillOperation.REPLACE)
+blocks.fill(SHROOMLIGHT, world(x,y+9,z), world(x+19,y+9,z+29), FillOperation.REPLACE)
+blocks.fill(AIR, world(x+3,y+9,z+3), world(x+19-3,y+9,z+29-3), FillOperation.REPLACE)
+
+#水的詛咒
+def on_forever():
+    blocks.place(8, pos(0, 0, 0))
+    loops.pause(30000)
+
+loops.forever(on_forever)
