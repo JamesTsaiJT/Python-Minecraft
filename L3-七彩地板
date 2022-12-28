@@ -1,0 +1,22 @@
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+#方法1
+blocks.place(46,world(x,y,z))
+loops.pause(200)
+blocks.place(46,world(x,y+1,z))
+loops.pause(200)
+blocks.place(46,world(x,y+2,z))
+loops.pause(200)
+blocks.place(46,world(x,y+3,z))
+loops.pause(200)
+blocks.place(46,world(x,y+4,z))
+loops.pause(200)
+blocks.place(46,world(x,y+5,z))
+
+#方法2
+blocks.fill(GLASS, world(x,y,z), world(x+3,y,z+3), FillOperation.REPLACE)
+
+#方法3
+#blocks.fill(0, world(x,y,z), world(x+5,y+5,z+5), FillOperation.HOLLOW)
