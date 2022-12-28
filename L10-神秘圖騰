@@ -1,0 +1,19 @@
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+
+for i in range(20):
+    r = randint(1, 4)
+    if r == 1:
+        blocks.fill(TNT, world(x,y,z), world(x+4,y,z), FillOperation.REPLACE)
+        x+=4
+    elif r == 2:
+        blocks.fill(TNT, world(x,y,z), world(x-4,y,z), FillOperation.REPLACE)
+        x-=4
+    elif r == 3:
+        blocks.fill(TNT, world(x,y,z), world(x,y,z+4), FillOperation.REPLACE)
+        z+=4
+    else:
+        blocks.fill(TNT, world(x,y,z), world(x,y,z-4), FillOperation.REPLACE)
+        z-=4
