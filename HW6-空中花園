@@ -1,0 +1,12 @@
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+for i in range(5):
+    blocks.place(STONE,world(x,y-1,z))
+    blocks.place(STONE,world(x,y-1,z+1))
+    blocks.place(STONE,world(x,y-1,z-1))
+    y += 1
+    x += 1
+
+blocks.fill(GRASS,world(x,y-1,z-3),world(x+4,y-1,z+3),FillOperation.REPLACE)
