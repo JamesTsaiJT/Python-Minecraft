@@ -1,0 +1,26 @@
+def on_arrow_shot():
+    #射箭通知
+    player.say("Watch out!")
+    player.say("I shot an arrow")
+
+    #飛雷神遁(射箭瞬移)
+    loops.pause(1000)
+    #MOB 在MC中代表會動的實體
+    #      傳送           (被傳送物)選擇器(可以選玩家或MOB)          實體種類(正在飛行中的箭)
+    mobs.teleport_to_player(mobs.target(NEAREST_PLAYER), mobs.entities_by_type(ARROW_PROJECTILE_MOB))
+    #清除mob  mobs.kill()
+    mobs.kill(mobs.entities_by_type(ARROW_PROJECTILE_MOB))
+
+    #射箭變黃金
+    loops.pause(1000)
+    #作弊指令execute(對象，相對位置，"作弊指令")
+    #原mobs.execute(mobs.target(NEAREST_PLAYER),pos(0,-1,0),"setblock ~ ~ ~ gold_block")
+    mobs.execute(mobs.entities_by_type(ARROW_PROJECTILE_MOB),pos(0,-1,0),"setblock ~ ~ ~ gold_block")
+    mobs.kill(mobs.entities_by_type(ARROW_PROJECTILE_MOB))
+
+    #射箭產生鐵巨人
+    loops.pause(1000)
+    mobs.execute(mobs.entities_by_type(ARROW_PROJECTILE_MOB),pos(0,0,0),"summon iron_golem ~ ~ ~")
+    mobs.kill(mobs.entities_by_type(ARROW_PROJECTILE_MOB))
+
+player.on_arrow_shot(on_arrow_shot)
