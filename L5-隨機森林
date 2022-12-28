@@ -1,0 +1,9 @@
+while True:
+    if blocks.test_for_block(SAND, pos(0, -1, 0)):
+        blocks.place(CACTUS, pos(randint(-5,5), 0, randint(-5,5)))
+    else:
+        blocks.place(blocks.block_with_data(POPPY, randint(0,10)), pos(randint(-5,5), 0, randint(-5,5)))
+        blocks.place(blocks.block_with_data(POPPY, randint(0,10)), pos(randint(-5,5), 0, randint(-5,5)))
+        blocks.place(blocks.block_with_data(POPPY, randint(0,10)), pos(randint(-5,5), 0, randint(-5,5)))
+    
+    loops.pause(1000)
