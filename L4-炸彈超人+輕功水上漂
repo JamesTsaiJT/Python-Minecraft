@@ -1,0 +1,18 @@
+#輕功水上漂
+def on_forever():
+    if blocks.test_for_block(WATER, pos(0, -1, 1)):
+        blocks.fill(GLASS, pos(2, -1, 1), pos(-1, -1, -1), FillOperation.REPLACE)
+    if blocks.test_for_block(WATER, pos(0, -1, -1)):
+        blocks.fill(GLASS, pos(2, -1, 1), pos(-1, -1, -1), FillOperation.REPLACE)
+    if blocks.test_for_block(WATER, pos(1, -1, 0)):
+        blocks.fill(GLASS, pos(2, -1, 1), pos(-1, -1, -1), FillOperation.REPLACE)
+    if blocks.test_for_block(WATER, pos(-1, -1, 0)):
+        blocks.fill(GLASS, pos(2, -1, 1), pos(-1, -1, -1), FillOperation.REPLACE)    
+
+loops.forever(on_forever)
+
+#炸彈超人
+def on_forever_fower():
+    blocks.place(46,pos(0,0,0))
+    
+loops.forever(on_forever_fower)
