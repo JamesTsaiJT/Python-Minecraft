@@ -1,0 +1,10 @@
+def ironMan(x,y,z):
+    mobs.execute(mobs.target(NEAREST_PLAYER),world(x,y,z),"summon iron_golem ~ ~ ~")
+
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+for i in range(0,20,3):
+    for j in range(0,20,3):
+        ironMan(x+j, y, z+i)
