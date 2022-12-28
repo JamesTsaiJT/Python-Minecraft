@@ -1,0 +1,26 @@
+def buildPlan(x,y,z,block):
+    #機身
+    blocks.fill(block, world(x-5, y, z), world(x+5, y+1, z+1), FillOperation.REPLACE)
+    #機翼
+    blocks.fill(block, world(x, y, z-4), world(x+1, y, z+5), FillOperation.REPLACE)
+
+def bomber(x,y,z):
+    for i in range(4):
+        mobs.execute(mobs.target(NEAREST_PLAYER),world(x,y,z-2+i),"summon tnt ~ ~ ~")
+
+def movePlan(x,y,z,distance):
+    for i in range(distance):
+        buildPlan(x,y,z,IRON_BLOCK)
+        loops.pause(100)
+        if i%2 == 1:
+            bomber(x,y,z)
+        buildPlan(x,y,z,AIR)
+        x += 1
+
+
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+y += 20
+movePlan(x,y,z,20)
