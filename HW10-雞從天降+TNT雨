@@ -1,0 +1,19 @@
+#TNT雨
+def tnt_rain(times):
+    for i in range(times):
+        rx = randint(-10, 10)
+        rz = randint(-10, 10)
+        mobs.execute(mobs.target(NEAREST_PLAYER),pos(rx,20,rz),"summon tnt ~ ~ ~")
+        loops.pause(500)
+
+tnt_rain(20)
+
+#雞從天降
+def chicken_rain(times):
+    for i in range(times):
+        rx = randint(-10, 10)
+        rz = randint(-10, 10)
+        mobs.execute(mobs.target(NEAREST_PLAYER),pos(rx,20,rz),"summon chicken ~ ~ ~")
+        loops.pause(500)
+
+chicken_rain(20)
