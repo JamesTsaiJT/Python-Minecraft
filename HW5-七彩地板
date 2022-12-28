@@ -1,0 +1,4 @@
+while True:
+    blocks.place(blocks.block_with_data(WOOL, randint(0,15)), pos(randint(-5,5), -1, randint(-5,5)))
+    
+    loops.pause(500)
