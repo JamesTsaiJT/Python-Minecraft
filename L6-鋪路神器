@@ -1,0 +1,16 @@
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+#直線路
+for i in range(10):
+    blocks.place(STONE,world(x,y-1,z))
+    z += 1
+
+#斜的路
+for i in range(10):
+    blocks.place(STONE,world(x,y-1,z))
+    blocks.place(STONE,world(x,y-1,z+1))
+    blocks.place(STONE,world(x,y-1,z+2))
+    z += 1
+    x += 1   
