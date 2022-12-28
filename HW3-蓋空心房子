@@ -1,0 +1,7 @@
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+blocks.fill(GLASS, world(x,y,z), world(x+20,y+10,z+30), FillOperation.HOLLOW)
+blocks.fill(SHROOMLIGHT, world(x,y+4,z), world(x+20,y+4,z+30), FillOperation.HOLLOW)
+blocks.fill(AIR, world(x+1,y+4,z+1), world(x+20-1,y+4,z+30-1), FillOperation.REPLACE)
