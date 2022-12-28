@@ -1,0 +1,7 @@
+def on_arrow_shot():
+    loops.pause(1000)
+    for i in range(10):
+        mobs.execute(mobs.entities_by_type(ARROW_PROJECTILE_MOB),pos(0,0,0),"summon tnt ~ ~ ~")
+    mobs.kill(mobs.entities_by_type(ARROW_PROJECTILE_MOB))
+
+player.on_arrow_shot(on_arrow_shot)
