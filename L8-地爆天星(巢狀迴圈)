@@ -1,0 +1,30 @@
+#種樹
+def plantTree(x,y,z):
+    leaves = 18
+    trunk = 17
+    blocks.fill(leaves,world(x-1,y+3,z-1),world(x+1,y+5,z+1),FillOperation.REPLACE)
+    blocks.fill(trunk,world(x,y,z),world(x,y+4,z),FillOperation.REPLACE)
+
+#放TNT
+def bomber(x,y,z):
+    blocks.place(TNT, world(x, y, z))
+
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+#一排TNT
+
+for i in range(0,20,3):
+    bomber(x, y, z+i)
+
+#一面TNT
+for i in range(0,20,3):
+    for j in range(0,20,3):
+        bomber(x, y+j, z+i)
+
+#地爆天星(立體巨大TNT方塊)
+for i in range(0,20,3):
+    for j in range(0,20,3):
+        for k in range(0,20,3):
+            bomber(x+k, y+j, z+i)
