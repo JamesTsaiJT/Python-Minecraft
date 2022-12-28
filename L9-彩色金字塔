@@ -1,0 +1,11 @@
+def square(black,x,y,z,n):
+    blocks.fill(black, world(x,y,z), world(x-n+1,y,z-n+1), FillOperation.REPLACE)
+
+
+x = player.position().get_value(Axis.X)
+y = player.position().get_value(Axis.Y)
+z = player.position().get_value(Axis.Z)
+
+wool = [RED_WOOL,ORANGE_WOOL,YELLOW_WOOL,LIME_WOOL,LIGHT_BLUE_WOOL,BLUE_WOOL,PURPLE_WOOL]
+for i in range(7):
+    square(wool[i],x+i,y+i,z+i,1+2*i)
