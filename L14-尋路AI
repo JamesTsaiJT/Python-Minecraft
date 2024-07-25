@@ -1,0 +1,31 @@
+while True:
+    player.say(":)")
+
+"""
+a = 0
+while True:
+    a = a + 1
+    player.say("第"+ a +":次 :)")
+"""
+
+"""
+a = 0
+while a<10:
+    a = a + 1
+    player.say("第"+ a +":次 :)")
+"""
+
+"""
+while True:
+    if not (agent.detect(AgentDetection.BLOCK, LEFT)):
+        agent.turn(LEFT_TURN)
+        agent.move(FORWARD, 1)
+    elif not (agent.detect(AgentDetection.BLOCK, FORWARD)):
+        agent.move(FORWARD, 1)
+    elif not (agent.detect(AgentDetection.BLOCK, RIGHT)):
+        agent.turn(RIGHT_TURN)
+        agent.move(FORWARD, 1)
+    else:
+        agent.turn(LEFT_TURN)
+        agent.turn(LEFT_TURN)
+"""
